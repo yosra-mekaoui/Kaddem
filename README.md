@@ -7,7 +7,7 @@
 ## Créer les CRUD des différentes entités
 ![se](https://user-images.githubusercontent.com/61566287/200142960-bd06a05a-6754-4162-a71e-d611bdb8470b.PNG)
 ### Exemple
-*1.Entité Etudiant*
+>Entité Etudiant
 
 List<Etudiant> retrieveAllEtudiants();
 
