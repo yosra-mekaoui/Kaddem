@@ -1,6 +1,8 @@
 package com.example.demo.Entities;
-import lombok.Builder;
+
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -10,18 +12,22 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
-public class Equipe  implements Serializable {
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "Equipe")
+public class Equipe implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idEquipe ;
-    private String nomEquipe ;
+    private int idEquipe;
+    @Column(name = "nomEquipe", length = 30, nullable = false)
+    private  String nomEquipe;
+    @Enumerated(EnumType.ORDINAL)
+    private  Niveau niveau;
 
-    @Enumerated(EnumType.STRING)
-    private Niveau niveau ;
+   @ManyToMany(cascade = CascadeType.ALL,mappedBy = "equipes")
+    private Set<Etudiant> etudiants;
 
-    @ManyToMany(mappedBy = "equipes", cascade = CascadeType.ALL)
-    private Set<Etudiant> etudiants ;
+   @OneToOne
+    private DetailEquipe equipeDetail;
 
-    @OneToOne
-    private DetailEquipe detailEquipe ;
 }

@@ -1,7 +1,8 @@
 package com.example.demo.Entities;
 
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -11,20 +12,26 @@ import java.util.Date;
 @Entity
 @Getter
 @Setter
-public class Contrat  implements Serializable {
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "Contrat")
+
+public class Contrat implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idContrat ;
-    @Temporal (TemporalType.DATE)
-    private Date dateDebutContrat ;
-    @Temporal (TemporalType.DATE)
-    private Date dateFinContrat ;
-    @Enumerated(EnumType.STRING)
-    private Specialite specialite ;
-    private Boolean archive ;
-    private Integer montantContrat ;
+    private int idContrat;
+    @Temporal(TemporalType.DATE)
+    @Column(name = "dateFinContrat", nullable = false)
 
-    @ManyToOne
-    Etudiant etudiant  ;
+
+    private Date dateFinContrat;
+    private boolean archive;
+    private int montantContrat;
+    @Enumerated(EnumType.ORDINAL)
+    private Specialite specialite;
+@ManyToOne
+    Etudiant etudiant;
+
 
 }
