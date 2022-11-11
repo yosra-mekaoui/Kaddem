@@ -1,6 +1,8 @@
 # Projet Spring Boot
- <img src="https://raw.githubusercontent.com/iampavangandhi/iampavangandhi/master/gifs/Hi.gif" width="30px" height="50px">
-# « Kaddem » , c’est quoi?:
+<img src="https://raw.githubusercontent.com/iampavangandhi/iampavangandhi/master/gifs/Hi.gif" width="30px" height="50px">
+   <strong> « Kaddem » , c’est quoi?:</strong> 
+</h1>
+
 >C’est un projet qui vise à encourager les jeunes étudiants à améliorer leurs compétences professionnelles notamment dans le cadre des nouvelles tendances du monde de l’informatique.
 # Objectif:
 >Dans le but de préparer les étudiants aux nouvelles exigences du marché d’emploi, nous proposons de travailler sur le projet « KADDEM ».
