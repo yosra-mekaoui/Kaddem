@@ -11,7 +11,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UniversiteService implements IUniversiteService{
 
-   @Autowired
+    @Autowired
     IUniversiteRepo iUniversiteRepo;
     @Override
     public List<Universite> retrieveAllUniversites() {
