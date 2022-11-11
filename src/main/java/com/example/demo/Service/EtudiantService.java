@@ -1,6 +1,8 @@
 package com.example.demo.Service;
 
+import com.example.demo.Entities.Departement;
 import com.example.demo.Entities.Etudiant;
+import com.example.demo.Repository.IDepartementRepo;
 import com.example.demo.Repository.IEtudiantRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,9 @@ import java.util.stream.StreamSupport;
 public class EtudiantService implements IEtudiantService {
     @Autowired
     IEtudiantRepo edtREpo;
+    @Autowired
+
+    IDepartementRepo idepartementRepository ;
     public Etudiant addEtudiant(Etudiant e) {
        return edtREpo.save(e);
 
@@ -41,4 +46,15 @@ public class EtudiantService implements IEtudiantService {
         return edtREpo.findById(idEtudiant).orElse(null);
     }
 
+    /*@Override
+    public void assignEtudiantToDepartment(Long etudiantId, Long departmentId) {
+        Departement D1 = idepartementRepository.findByIdDepartement(departmentId);  ;
+        Etudiant E1 = edtREpo.findById(etudiantId).orElse(null);
+        System.out.println("dep : "+D1);
+        System.out.println("etud : "+E1);
+        System.out.println("dep : "+D1);
+        E1.setDepartements(D1);
+        edtREpo.save(E1);
+
+    }*/
 }
