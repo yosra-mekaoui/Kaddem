@@ -21,13 +21,17 @@ public class Contrat implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idContrat;
+
     @Temporal(TemporalType.DATE)
     @Column(name = "dateFinContrat", nullable = false)
 
 
     private Date dateFinContrat;
+
     private boolean archive;
+
     private int montantContrat;
+
     @Enumerated(EnumType.ORDINAL)
     private Specialite specialite;
 @ManyToOne

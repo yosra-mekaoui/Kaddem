@@ -14,4 +14,6 @@ public interface IDepartementService {
     Departement retrieveDepartement (Integer idDepart);
 
     Departement affecterEtudiant(Integer id,Integer idDe);
+
+    void assignEtudiantToDepartement (Integer etudiantId, Integer departementId) ;
 }

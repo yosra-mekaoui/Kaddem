@@ -19,8 +19,10 @@ public class Equipe implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idEquipe;
+
     @Column(name = "nomEquipe", length = 30, nullable = false)
     private  String nomEquipe;
+
     @Enumerated(EnumType.ORDINAL)
     private  Niveau niveau;
 

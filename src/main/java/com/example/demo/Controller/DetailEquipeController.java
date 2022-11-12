@@ -1,6 +1,7 @@
 package com.example.demo.Controller;
 
 import com.example.demo.Entities.DetailEquipe;
+import com.example.demo.Entities.Etudiant;
 import com.example.demo.Service.IDetailEquipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,12 +14,19 @@ public class DetailEquipeController {
     @Autowired
     IDetailEquipeService iDetailEquipeService ;
 
+    @GetMapping("/")
+    public String sayHello() {
+        return "Hello world" ;
+    }
+
+
 
     @PostMapping("/add")
-    @ResponseBody
-    public void addDetailEquipe(@RequestBody DetailEquipe D) {
-        iDetailEquipeService.addDetailEquipe(D);
+@ResponseBody
+    public DetailEquipe addDetailEquipe(@RequestBody DetailEquipe detailEquipe) {
+       return iDetailEquipeService.addDetailEquipe(detailEquipe);
     }
+
 
 
 

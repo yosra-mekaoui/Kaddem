@@ -17,8 +17,10 @@ public class DetailEquipe implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idDetailEquipe;
+
     @Column(name = "thematique", length = 30, nullable = false)
     private  String thematique;
+
     private int salle;
 
     @OneToOne(mappedBy = "equipeDetail")

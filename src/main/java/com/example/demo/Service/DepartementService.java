@@ -46,4 +46,11 @@ public class DepartementService implements IDepartementService{
         etudiantService.addEtudiant(e);
         return d;
     }
+    @Override
+    public void assignEtudiantToDepartement(Integer etudiantId, Integer departementId) {
+        Etudiant etudiant=etudiantService.retrieveEtudiant(etudiantId);
+        etudiant.setDepartement(retrieveDepartement(departementId));
+        etudiantService.updateEtudiant(etudiant);
+    }
+
 }

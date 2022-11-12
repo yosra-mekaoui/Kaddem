@@ -13,6 +13,7 @@ public class UniversiteService implements IUniversiteService{
 
     @Autowired
     IUniversiteRepo iUniversiteRepo;
+    DepartementService departementService;
     @Override
     public List<Universite> retrieveAllUniversites() {
         return (List<Universite>)iUniversiteRepo.findAll();
@@ -31,5 +32,12 @@ public class UniversiteService implements IUniversiteService{
     @Override
     public Universite retrieveUniversite(Integer idUniversite) {
         return iUniversiteRepo.findById(idUniversite).get();
+    }
+
+    @Override
+    public void assignUniversiteToDepartement(Integer idUniversite, Integer idDepartement) {
+        Universite universite=retrieveUniversite(idUniversite);
+        universite.getDepartements().add(departementService.retrieveDepartement(idDepartement));
+        updateUniversite(universite);
     }
 }

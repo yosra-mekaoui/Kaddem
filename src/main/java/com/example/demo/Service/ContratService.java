@@ -19,9 +19,7 @@ public class ContratService implements IContratService{
     }
 
     @Override
-    public Contrat updateContrat(Contrat ce) {
-        return contratRepo.save(ce);
-    }
+    public Contrat updateContrat(Contrat ce) {return contratRepo.save(ce);}
 
     @Override
     public Contrat addContrat(Contrat ce) {

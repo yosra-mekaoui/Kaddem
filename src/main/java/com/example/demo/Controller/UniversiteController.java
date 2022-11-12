@@ -29,9 +29,9 @@ public class UniversiteController {
     }
 
 
-   /* @PutMapping(value = "/univtodepar/{idUniversite}/{idDepartement}")
-    @ResponseBody
-    public void univtodepar(@PathVariable("idUniversite") Long idUniversite ,@PathVariable("idDepartement") Long idDepartement ) {
-        iUniversiteService.assignUniversiteToDepartement(idUniversite,idDepartement);
-    }*/
+
+   @PutMapping("/assignUniversiteToDepartement")
+   public void assignUniversiteToDepartement(@RequestParam Integer idUniversite, @RequestParam Integer idDepartement) {
+       iUniversiteService.assignUniversiteToDepartement(idUniversite, idDepartement);
+   }
 }
