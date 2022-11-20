@@ -47,6 +47,8 @@ void removeEtudiant(Integer idEtudiant);
 ![4](https://user-images.githubusercontent.com/61566287/200143193-2e60a4e6-9392-48a8-b93c-35f842a8bf25.PNG)
   >Supprimer Etudiant :
 ![5](https://user-images.githubusercontent.com/61566287/200143201-b2b9d857-f30d-4658-9099-bfdc5047baf2.PNG)
+## 4-Services avancés
+
 
 
   
