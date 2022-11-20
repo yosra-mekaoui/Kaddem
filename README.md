@@ -41,14 +41,21 @@ void removeEtudiant(Integer idEtudiant);
   
  >Afficher liste les Etudiants :
 ![1](https://user-images.githubusercontent.com/61566287/200143161-32bf16be-2315-4082-89db-9af7b9eb0c18.PNG)
+  
   >Ajouter Etudiant :
   ![2](https://user-images.githubusercontent.com/61566287/200143186-c9bf3c73-e0d9-44db-9674-779aa1a4ff20.PNG)
+  
   >Modifier Etudiant :
 ![3](https://user-images.githubusercontent.com/61566287/200143190-2fa56578-667d-412b-a4a4-bde4f0c2f5be.PNG)
+  
   >Afficher Etudiant By id : 
 ![4](https://user-images.githubusercontent.com/61566287/200143193-2e60a4e6-9392-48a8-b93c-35f842a8bf25.PNG)
+  
   >Supprimer Etudiant :
 ![5](https://user-images.githubusercontent.com/61566287/200143201-b2b9d857-f30d-4658-9099-bfdc5047baf2.PNG)
+  
+  
+  
 ## 4-Services avancés
 
 >public void assignEtudiantToDepartement (Integer etudiantId, Integer departementId) ;
