@@ -35,8 +35,10 @@ Etudiant retrieveEtudiant(Integer idEtudiant);
 void removeEtudiant(Integer idEtudiant);
 
 ## 3-Spring MVC REST
+  
 >Exposer les services implémentés avec Postman et/ou Swagger pour les tester.
   ### Exemple
+  
  >Afficher liste les Etudiants :
 ![1](https://user-images.githubusercontent.com/61566287/200143161-32bf16be-2315-4082-89db-9af7b9eb0c18.PNG)
   >Ajouter Etudiant :
