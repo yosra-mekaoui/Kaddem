@@ -52,6 +52,7 @@ void removeEtudiant(Integer idEtudiant);
 ![1](https://user-images.githubusercontent.com/61566287/202925440-42c0865a-6f40-4e75-976b-0f4429da5e0b.PNG)
 >public void assignUniversiteToDepartement(Integer idUniversite, Integer idDepartement);
   ![2](https://user-images.githubusercontent.com/61566287/202925513-2425b028-5e8a-4e3c-a49d-ca51824cf65f.PNG)
+  
 >Dans la base :
   ![1 2](https://user-images.githubusercontent.com/61566287/202925533-aeb739cf-b56c-4f0f-a168-533dfc544c85.PNG)
   
