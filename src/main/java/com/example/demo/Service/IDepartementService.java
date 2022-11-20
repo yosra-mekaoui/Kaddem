@@ -13,7 +13,7 @@ public interface IDepartementService {
 
     Departement retrieveDepartement (Integer idDepart);
 
-    Departement affecterEtudiant(Integer id,Integer idDe);
+    Departement assignEtudiantToDepartement(Integer id,Integer idDe);
+    public void assignUniversiteToDepartement(Integer idUniversite, Integer idDepartement);
 
-    void assignEtudiantToDepartement (Integer etudiantId, Integer departementId) ;
 }

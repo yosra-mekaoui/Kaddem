@@ -2,6 +2,7 @@ package com.example.demo.Service;
 
 import com.example.demo.Entities.Contrat;
 
+import java.util.Date;
 import java.util.List;
 
 public interface IContratService {
@@ -14,4 +15,9 @@ public interface IContratService {
     Contrat retrieveContrat (Integer idContrat);
 
     void removeContrat(Integer idContrat);
+    float getChiffreAffaireEntreDeuxDate(Date startDate, Date endDate);
+    List<Contrat> contratBetween2dates(Date startDate, Date endDate);
+    Integer nbContratsValides(Date endDate, Date startDate);
+
+
 }

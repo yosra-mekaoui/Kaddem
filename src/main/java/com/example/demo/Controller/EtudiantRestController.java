@@ -1,5 +1,6 @@
 package com.example.demo.Controller;
 
+import com.example.demo.Entities.Contrat;
 import com.example.demo.Entities.Etudiant;
 import com.example.demo.Service.IEtudiantService;
 import lombok.RequiredArgsConstructor;
@@ -50,4 +51,20 @@ public class EtudiantRestController {
     public void affecteretudtodepart(@PathVariable("id-etudiant") Long etudiantId ,@PathVariable("departmentId") Long departmentId ) {
         iEtudiantService.assignEtudiantToDepartment(etudiantId,departmentId);
     }*/
+
+  //habtch t5dm     "status": 500
+    @PutMapping(value = "/addAndAssignEtudiantToEquipeAndContract/{idContrat}/{idequipe}")
+    @ResponseBody
+    public void addAndAssignEtudiantToEquipeAndContract(@RequestBody Etudiant etudiant, @PathVariable("idContrat")Integer idContrat ,@PathVariable("idequipe") Integer idequipe ) {
+        iEtudiantService.addAndAssignEtudiantToEquipeAndContract(etudiant,idContrat,idequipe);
+    }
+    @PutMapping ("/affectContratToEtudiant/{nom}/{prenom}")
+    public Contrat affectContratToEtudiant(@RequestBody Contrat c, @PathVariable("nom") String nom, @PathVariable("prenom") String prenom) {
+        return iEtudiantService.affectContratToEtudiant(c,nom,prenom);
+    }
+    @GetMapping("/list/{idDepart}")
+    List<Etudiant> retrieveAllEtudiants(@PathVariable("idDepart") Integer idDepart){
+        return iEtudiantService.getEtudiantsByDepartement(idDepart);
+    }
+
 }

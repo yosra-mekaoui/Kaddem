@@ -27,7 +27,7 @@ public class Contrat implements Serializable {
 
 
     private Date dateFinContrat;
-
+    private Date dateDebutContrat;
     private boolean archive;
 
     private int montantContrat;

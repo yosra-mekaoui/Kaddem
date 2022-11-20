@@ -1,11 +1,15 @@
 package com.example.demo.Service;
 
+import com.example.demo.Entities.Departement;
+import com.example.demo.Entities.Etudiant;
 import com.example.demo.Entities.Universite;
+import com.example.demo.Repository.IDepartementRepo;
 import com.example.demo.Repository.IUniversiteRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 @Service("UniversiteService")
 @RequiredArgsConstructor
@@ -13,6 +17,8 @@ public class UniversiteService implements IUniversiteService{
 
     @Autowired
     IUniversiteRepo iUniversiteRepo;
+    IDepartementRepo iDepartementRepo;
+
     DepartementService departementService;
     @Override
     public List<Universite> retrieveAllUniversites() {
@@ -35,9 +41,9 @@ public class UniversiteService implements IUniversiteService{
     }
 
     @Override
-    public void assignUniversiteToDepartement(Integer idUniversite, Integer idDepartement) {
-        Universite universite=retrieveUniversite(idUniversite);
-        universite.getDepartements().add(departementService.retrieveDepartement(idDepartement));
-        updateUniversite(universite);
+    public List<Departement> retrieveDepartementsByUniversite(Integer idUniversite) {
+        return iUniversiteRepo.retrieveDepartementsByUniversite(idUniversite);
     }
+
+
 }

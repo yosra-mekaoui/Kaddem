@@ -1,17 +1,19 @@
 package com.example.demo.Service;
 
-import com.example.demo.Entities.Departement;
 import com.example.demo.Entities.Etudiant;
+import com.example.demo.Entities.Equipe;
+import com.example.demo.Entities.Contrat;
+import com.example.demo.Repository.IContratRepo;
 import com.example.demo.Repository.IDepartementRepo;
+import com.example.demo.Repository.IEquipeRepo;
 import com.example.demo.Repository.IEtudiantRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
+
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 @Service("EtudiantService")
 @RequiredArgsConstructor
 public class EtudiantService implements IEtudiantService {
@@ -20,6 +22,10 @@ public class EtudiantService implements IEtudiantService {
     @Autowired
 
     IDepartementRepo idepartementRepository ;
+    @Autowired
+    IContratRepo contratRepository;
+    @Autowired
+    IEquipeRepo equipeRespository;
     public Etudiant addEtudiant(Etudiant e) {
        return edtREpo.save(e);
 
@@ -46,15 +52,33 @@ public class EtudiantService implements IEtudiantService {
         return edtREpo.findById(idEtudiant).orElse(null);
     }
 
-    /*@Override
-    public void assignEtudiantToDepartment(Long etudiantId, Long departmentId) {
-        Departement D1 = idepartementRepository.findByIdDepartement(departmentId);  ;
-        Etudiant E1 = edtREpo.findById(etudiantId).orElse(null);
-        System.out.println("dep : "+D1);
-        System.out.println("etud : "+E1);
-        System.out.println("dep : "+D1);
-        E1.setDepartements(D1);
-        edtREpo.save(E1);
+    @Override
+    public List<Etudiant> getEtudiantsByDepartement(Integer idDepart) {return edtREpo.findEtudiantByDepartement(idDepart);}
 
-    }*/
+    @Transactional
+    public Etudiant addAndAssignEtudiantToEquipeAndContract(Etudiant e, Integer idContrat, Integer idEquipe) {
+        Contrat contrat = contratRepository.findById(idContrat).get();
+        Equipe equipe = equipeRespository.findById(idEquipe).get();
+        e.getContrats().add(contrat);
+        e.getEquipes().add(equipe);
+        // contrat.setEtudiant(e);
+        edtREpo.save(e);
+        //etudiantRepository.save(contrat);
+        System.out.println(e.getContrats());
+
+        return e ;
+
+    }
+    @Override
+    public Contrat affectContratToEtudiant(Contrat ce, String nomE, String prenomE) {
+        Etudiant e=edtREpo.findEtudiantByNomPrenom(nomE,prenomE);
+
+        e.getContrats().add(ce);
+        ce.setEtudiant(e);
+        contratRepository.save(ce);
+        edtREpo.save(e);
+        return ce;
+    }
+
+
 }
