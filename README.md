@@ -53,6 +53,11 @@ void removeEtudiant(Integer idEtudiant);
 >public void assignUniversiteToDepartement(Integer idUniversite, Integer idDepartement);
   ![2](https://user-images.githubusercontent.com/61566287/202925513-2425b028-5e8a-4e3c-a49d-ca51824cf65f.PNG)
   ![1 2](https://user-images.githubusercontent.com/61566287/202925533-aeb739cf-b56c-4f0f-a168-533dfc544c85.PNG)
+>List<Etudiant> getEtudiantsByDepartement (Integer idDepartement);
+  ![3](https://user-images.githubusercontent.com/61566287/202925566-9d74fd15-3869-4350-83cc-0b87cc8662d6.PNG)
+>public List<Departement> retrieveDepartementsByUniversite(Integer idUniversite)
+  ![4](https://user-images.githubusercontent.com/61566287/202925600-10f1fc03-0c65-42e2-a547-b445fec813c3.PNG)
+
 
 
 
