@@ -61,6 +61,9 @@ void removeEtudiant(Integer idEtudiant);
   
 >public List<Departement> retrieveDepartementsByUniversite(Integer idUniversite);
   ![4](https://user-images.githubusercontent.com/61566287/202925600-10f1fc03-0c65-42e2-a547-b445fec813c3.PNG)
+  
+>public float getChiffreAffaireEntreDeuxDate(Date startDate, Date endDate) ;
+  
 
 
 
