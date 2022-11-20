@@ -63,6 +63,8 @@ void removeEtudiant(Integer idEtudiant);
   ![4](https://user-images.githubusercontent.com/61566287/202925600-10f1fc03-0c65-42e2-a547-b445fec813c3.PNG)
   
 >public float getChiffreAffaireEntreDeuxDate(Date startDate, Date endDate) ;
+  ![5](https://user-images.githubusercontent.com/61566287/202925725-fdee5a66-c3ff-48b6-9ab3-6b1f35ecfc01.PNG)
+
   
 
 
