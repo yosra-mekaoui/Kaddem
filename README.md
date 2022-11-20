@@ -48,6 +48,7 @@ void removeEtudiant(Integer idEtudiant);
   >Supprimer Etudiant :
 ![5](https://user-images.githubusercontent.com/61566287/200143201-b2b9d857-f30d-4658-9099-bfdc5047baf2.PNG)
 ## 4-Services avancés
+
 >public void assignEtudiantToDepartement (Integer etudiantId, Integer departementId) ;
 ![1](https://user-images.githubusercontent.com/61566287/202925440-42c0865a-6f40-4e75-976b-0f4429da5e0b.PNG)
 
