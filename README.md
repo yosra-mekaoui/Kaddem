@@ -83,6 +83,8 @@ void removeEtudiant(Integer idEtudiant);
   
 >Integer nbContratsValides(Date startDate, Date endDate);
   ![6](https://user-images.githubusercontent.com/61566287/202925764-d34ec6fc-9865-4887-84aa-9816300715aa.PNG)
+  
+>Ajouter l'entité Experience :
 
 
   
