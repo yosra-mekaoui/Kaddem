@@ -1,5 +1,6 @@
 package com.example.demo.Entities;
 import antlr.collections.List;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,8 +30,14 @@ public class Etudiant implements Serializable {
 
     @ManyToMany(cascade = CascadeType.ALL)
     private Set<Equipe> equipes;
+
 @OneToMany(cascade = CascadeType.ALL,mappedBy = "etudiant")
+@JsonIgnoreProperties({"etudiant"})
     private Set<Contrat> contrats;
+
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "etudiant")
+    @JsonIgnoreProperties({"etudiant"})
+    private Set<Experience> experiences;
 @ManyToOne
     Departement departement;
 }

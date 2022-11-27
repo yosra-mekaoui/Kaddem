@@ -18,4 +18,5 @@ Etudiant addEtudiant(Etudiant e);
     List<Etudiant> getEtudiantsByDepartement(Integer idDepart);
 
 
+   // Etudiant assignEtudiantToExperience(Integer id, Integer idEtudiant);
 }

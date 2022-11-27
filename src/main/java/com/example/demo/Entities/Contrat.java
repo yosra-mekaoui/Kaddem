@@ -1,5 +1,6 @@
 package com.example.demo.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -34,7 +35,9 @@ public class Contrat implements Serializable {
 
     @Enumerated(EnumType.ORDINAL)
     private Specialite specialite;
-@ManyToOne
+    @JsonIgnoreProperties({"etudiant"})
+
+    @ManyToOne
     Etudiant etudiant;
 
 

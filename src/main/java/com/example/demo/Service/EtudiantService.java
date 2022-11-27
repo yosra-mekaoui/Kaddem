@@ -1,8 +1,6 @@
 package com.example.demo.Service;
 
-import com.example.demo.Entities.Etudiant;
-import com.example.demo.Entities.Equipe;
-import com.example.demo.Entities.Contrat;
+import com.example.demo.Entities.*;
 import com.example.demo.Repository.IContratRepo;
 import com.example.demo.Repository.IDepartementRepo;
 import com.example.demo.Repository.IEquipeRepo;
@@ -26,6 +24,8 @@ public class EtudiantService implements IEtudiantService {
     IContratRepo contratRepository;
     @Autowired
     IEquipeRepo equipeRespository;
+   /* @Autowired
+    ExperienceService experienceService;*/
     public Etudiant addEtudiant(Etudiant e) {
        return edtREpo.save(e);
 
@@ -80,5 +80,13 @@ public class EtudiantService implements IEtudiantService {
         return ce;
     }
 
+ /*   @Override
+    public Etudiant assignEtudiantToExperience(Integer id, Integer idEtudiant) {
+        Experience ee=experienceService.retrieveExperience(id);
+        Etudiant e=retrieveEtudiant(idEtudiant);
+        ee.setEtudiant(e);
+        experienceService.addExperience(ee);
+        return e;
+    }*/
 
 }
