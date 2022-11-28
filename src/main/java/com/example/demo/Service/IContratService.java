@@ -19,5 +19,6 @@ public interface IContratService {
     List<Contrat> contratBetween2dates(Date startDate, Date endDate);
     Integer nbContratsValides(Date endDate, Date startDate);
 
-
+    List<Contrat> contratExp();
+    List<Contrat> contratDepasseAn();
 }

@@ -17,4 +17,9 @@ public interface IContratRepo extends CrudRepository<Contrat, Integer> {
 
     @Query("select c from Contrat c where   c.dateDebutContrat>=?1 and c.dateFinContrat<=?2")
     List<Contrat> contratBetween2dates(Date startDate, Date endDate);
+    @Query("select  c from Contrat c where DATEDIFF(current_date,c.dateFinContrat)=-15")
+    List<Contrat> dateExpi();
+
+    @Query("select c from Contrat c where DATEDIFF(c.dateFinContrat,c.dateDebutContrat)>=365")
+    List<Contrat> contratDepasseAn();
 }
