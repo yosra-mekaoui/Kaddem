@@ -41,7 +41,7 @@ public class EquipeService implements IEquipeService{
         return iEquipeRepo.findById(idEquipe).get();
     }
 
-    @Scheduled(cron = "* * * 30 * *")
+  /*  @Scheduled(cron = "* * * 30 * *")
     public void faireEvoluerEquipes(){
         int cptEtudiant=0;
         List<Equipe> equipes= (List<Equipe>) iEquipeRepo.findAll();
@@ -77,5 +77,5 @@ public class EquipeService implements IEquipeService{
             }
         }
 
-    }
+    }*/
 }

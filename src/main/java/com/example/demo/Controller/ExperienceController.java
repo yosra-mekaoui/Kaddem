@@ -1,7 +1,5 @@
 package com.example.demo.Controller;
-import com.example.demo.Entities.Etudiant;
 import com.example.demo.Entities.Experience;
-import com.example.demo.Service.IEtudiantService;
 import com.example.demo.Service.IExperienceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +10,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/Experience")
+@CrossOrigin(origins = "*")
+
 public class ExperienceController {
     @Autowired
     IExperienceService ExperienceService ;
@@ -29,9 +29,9 @@ public class ExperienceController {
         return  ExperienceService.retrieveAllExperiences();
     }
 
-    @PutMapping ("/update")
-    public Experience updateExperience(@RequestBody Experience ce){
-        return  ExperienceService.addExperience(ce);
+    @PutMapping ("/update/{id}")
+    public Experience updateExperience(@PathVariable("id") Integer id, @RequestBody Experience ce) throws Exception {
+        return  ExperienceService.updateExperience(id,ce);
     }
 
     @GetMapping("/get/{idExperience}")

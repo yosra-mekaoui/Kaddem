@@ -9,7 +9,8 @@ public interface IExperienceService {
     // ya final ya @requiredconstructor
     List<Experience> retrieveAllExperiences();
 
-    Experience updateExperience(Experience ce);
+
+    Experience updateExperience(Integer id, Experience ce);
 
     Experience addExperience(Experience ce);
 

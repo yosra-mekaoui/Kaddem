@@ -7,7 +7,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @ComponentScan(basePackages = {"com.example.demo.Service"})
 @ComponentScan(basePackages = {"com.example.demo.Repository"})
-@EnableScheduling
+//@EnableScheduling
 @SpringBootApplication
 public class DemoApplication {
 

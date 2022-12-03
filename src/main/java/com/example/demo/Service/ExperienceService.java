@@ -22,8 +22,22 @@ public class ExperienceService implements IExperienceService {
     }
 
     @Override
-    public Experience updateExperience(Experience ce) {
-        return ExperienceRepo.save(ce);
+    public Experience updateExperience(Integer id,Experience ce) {
+    if(ExperienceRepo.findById(id).isPresent()){
+        Experience toUpdateExperience =ExperienceRepo.findById(id).get();
+    toUpdateExperience.setTitreDuProfil(ce.getTitreDuProfil());
+    toUpdateExperience.setType(ce.getType());
+    toUpdateExperience.setDateDebutExperience(ce.getDateDebutExperience());
+    toUpdateExperience.setDateFinExperience(ce.getDateFinExperience());
+    toUpdateExperience.setDescriptif(ce.getDescriptif());
+    toUpdateExperience.setLieu(ce.getLieu());
+    toUpdateExperience.setEtudiant(ce.getEtudiant());
+
+    return ExperienceRepo.save(toUpdateExperience);
+
+}
+
+        return null;
     }
 
     @Override
