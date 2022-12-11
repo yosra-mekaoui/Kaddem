@@ -100,6 +100,10 @@ void removeEtudiant(Integer idEtudiant);
 >Search PathParam:
   
 ![Capture d’écran (29)](https://user-images.githubusercontent.com/61566287/206903529-8a37938a-12e3-45b4-af44-f1f73e154ed4.png)
+  
+>Pagination :
+  
+
 
 
 
