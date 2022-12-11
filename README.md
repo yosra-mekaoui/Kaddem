@@ -104,6 +104,8 @@ void removeEtudiant(Integer idEtudiant);
 >Pagination :
   
 ![Capture d’écran (30)](https://user-images.githubusercontent.com/61566287/206903566-c2215669-43ca-4340-9ef8-026e8e676949.png)
+  
+>PDF :
 
 
 
