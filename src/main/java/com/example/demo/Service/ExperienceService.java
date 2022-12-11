@@ -5,7 +5,11 @@ import com.example.demo.Entities.Experience;
 import com.example.demo.Repository.IExperienceRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
 
 import java.util.List;
 @Service("ExperienceService")
@@ -15,12 +19,17 @@ public class ExperienceService implements IExperienceService {
     private IExperienceRepo ExperienceRepo;
     @Autowired
     private IEtudiantService etudiantService;
-    ;
+    
     @Override
     public List<Experience> retrieveAllExperiences() {
+
         return (List<Experience>) ExperienceRepo.findAll();
     }
-
+    @Override
+    public List<Experience> retrieveAllExperience(int pageNumber) {
+        Pageable pageable = PageRequest.of(pageNumber, 5);
+        return (List<Experience>) ExperienceRepo.findAll(pageable);
+    }
     @Override
     public Experience updateExperience(Integer id,Experience ce) {
     if(ExperienceRepo.findById(id).isPresent()){
@@ -86,5 +95,12 @@ public class ExperienceService implements IExperienceService {
       ExperienceRepo.save(ee);
       return ee;
   }
+
+    @Override
+    public Page<Experience> findAllByLieuContaining(String lieu , Pageable pageable) {
+        return ExperienceRepo.findAllByLieuContaining(lieu,pageable);
+
+    }
+
 
 }

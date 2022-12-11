@@ -2,12 +2,15 @@ package com.example.demo.Service;
 
 import com.example.demo.Entities.Etudiant;
 import com.example.demo.Entities.Experience;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
 public interface IExperienceService {
     // ya final ya @requiredconstructor
     List<Experience> retrieveAllExperiences();
+    List<Experience> retrieveAllExperience(int pageNumber);
 
 
     Experience updateExperience(Integer id, Experience ce);
@@ -20,15 +23,8 @@ public interface IExperienceService {
 
     Experience assignEtudiantToExperience(Integer id, Integer idExpereince);
 
-    /*  @Override
-          public Experience assignEtudiantToExperience(Integer idExperience, Integer idDep) {
-              Experience e=ExperienceRepo.findById(idExperience);
+    Page<Experience> findAllByLieuContaining(String lieu, Pageable pageable);
 
-              e.getEtudiant().add(ce);
-              ce.setExperience(e);
-              edtREpo.save(ce);
-              ExperienceRepo.save(e);
-              return ce;
-          }*/
+
 
 }
