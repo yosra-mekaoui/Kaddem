@@ -18,8 +18,9 @@
 # Etapes:
 
 ## 1-Créer les entités et les associations 
-![diagrame](https://user-images.githubusercontent.com/61566287/200142880-1b3017a2-d828-4e7c-8ed2-36f071a10393.PNG)
   ![Untitled Diagram](https://user-images.githubusercontent.com/61566287/204134790-1319ac22-6d64-4618-9fad-f873b140bbd8.png)
+
+![diagrame](https://user-images.githubusercontent.com/61566287/200142880-1b3017a2-d828-4e7c-8ed2-36f071a10393.PNG)
 
 ![bd](https://user-images.githubusercontent.com/61566287/202925922-3182f4ef-f895-4f11-b80f-5b765f13fb6f.PNG)
 
