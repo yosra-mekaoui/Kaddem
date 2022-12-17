@@ -109,6 +109,7 @@ void removeEtudiant(Integer idEtudiant);
 ![Capture d’écran (30)](https://user-images.githubusercontent.com/61566287/206903566-c2215669-43ca-4340-9ef8-026e8e676949.png)
   
 >PDF :
+![Capture d’écran (93)](https://user-images.githubusercontent.com/61566287/208265005-09ba2956-8742-4690-9839-5111872bb6b6.png)
 
 >Excel : 
 ![image](https://user-images.githubusercontent.com/61566287/208264867-3239f898-c4cd-4bd0-8194-faa443753807.png)
